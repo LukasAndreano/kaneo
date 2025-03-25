@@ -70,7 +70,7 @@ function SettingsLayout() {
                 transition={{ delay: 0.1 }}
                 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-4"
               >
-                Settings
+                Настройки
               </motion.h2>
               <nav className="space-y-1">
                 <motion.div
@@ -89,7 +89,7 @@ function SettingsLayout() {
                     )}
                   >
                     <Palette className="w-4 h-4 mr-3" />
-                    Appearance
+                    Внешний вид
                   </Link>
                 </motion.div>
               </nav>

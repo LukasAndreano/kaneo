@@ -40,10 +40,10 @@ function WorkspacePicker() {
             <div className="flex items-center">
               <div className="flex-1 min-w-0">
                 <div className="text-xs font-medium text-zinc-500 dark:text-zinc-400 mb-0.5">
-                  Workspace
+                  Рабочая область
                 </div>
                 <div className="text-sm font-medium text-zinc-900 dark:text-zinc-100 truncate">
-                  {selectedWorkspace?.name || "Select Workspace"}
+                  {selectedWorkspace?.name || "Выберите область"}
                 </div>
               </div>
               <ChevronDown className="w-4 h-4 text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 ml-2" />
@@ -80,7 +80,7 @@ function WorkspacePicker() {
               onClick={() => setIsCreateWorkspaceOpen(true)}
             >
               <Plus className="w-4 h-4 mr-2" />
-              New Workspace
+              Новая рабочая область
             </DropdownMenu.Item>
           </DropdownMenu.Content>
         </DropdownMenu.Portal>

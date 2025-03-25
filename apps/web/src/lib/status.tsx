@@ -14,8 +14,8 @@ export function getStatusIcon(status: "active" | "pending") {
 export function getStatusText(status: "active" | "pending") {
   switch (status) {
     case "active":
-      return "Active";
+      return "В команде";
     case "pending":
-      return "Pending";
+      return "Ожидает подтверждения";
   }
 }

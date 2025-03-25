@@ -25,7 +25,9 @@ export type SignUpFormValues = {
 
 const signUpSchema: ZodType<SignUpFormValues> = z.object({
   email: z.string().email(),
-  password: z.string().min(8, { message: "Password is too short" }),
+  password: z
+    .string()
+    .min(8, { message: "Пароль должен быть не менее 8 символов" }),
   name: z.string(),
 });
 
@@ -66,12 +68,12 @@ export function SignUpForm() {
             render={({ field, fieldState }) => (
               <FormItem>
                 <FormLabel className="text-sm font-medium text-zinc-300 mb-1.5 block">
-                  Full Name
+                  Имя и фамилия
                 </FormLabel>
                 <FormControl>
                   <Input
                     className="bg-white dark:bg-zinc-800/50 border-zinc-200 dark:border-zinc-700/50 text-zinc-900 dark:text-zinc-100"
-                    placeholder="Andrej Acevski"
+                    placeholder="Никита Балин"
                     {...field}
                   />
                 </FormControl>
@@ -86,12 +88,12 @@ export function SignUpForm() {
             render={({ field, fieldState }) => (
               <FormItem>
                 <FormLabel className="text-sm font-medium text-zinc-300 mb-1.5 block">
-                  Email
+                  Электронная почта
                 </FormLabel>
                 <FormControl>
                   <Input
                     className="bg-white dark:bg-zinc-800/50 border-zinc-200 dark:border-zinc-700/50 text-zinc-900 dark:text-zinc-100"
-                    placeholder="you@example.com"
+                    placeholder="nikita@shopcore.ru"
                     {...field}
                   />
                 </FormControl>
@@ -106,7 +108,7 @@ export function SignUpForm() {
             render={({ field, fieldState }) => (
               <FormItem>
                 <FormLabel className="text-sm font-medium text-zinc-300 mb-1.5 block">
-                  Password
+                  Пароль
                 </FormLabel>
                 <FormControl>
                   <div className="relative">
@@ -135,7 +137,7 @@ export function SignUpForm() {
           type="submit"
           className="w-full bg-indigo-600 text-white hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400 mt-6"
         >
-          Sign Up
+          Зарегистрироваться
         </Button>
       </form>
     </Form>

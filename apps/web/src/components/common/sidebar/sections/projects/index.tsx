@@ -64,7 +64,7 @@ function Projects({ workspaceId }: ProjectsProps) {
         )}
       >
         <h2 className="text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
-          {isSidebarOpened && "Projects"}
+          {isSidebarOpened && "Проекты"}
         </h2>
         <button
           type="button"
@@ -168,7 +168,7 @@ function Projects({ workspaceId }: ProjectsProps) {
                           )}
                         >
                           <LayoutDashboard className="w-3.5 h-3.5 mr-2 shrink-0" />
-                          Board
+                          Задачи
                         </button>
                         <button
                           type="button"
@@ -189,7 +189,7 @@ function Projects({ workspaceId }: ProjectsProps) {
                           )}
                         >
                           <Settings className="w-3.5 h-3.5 mr-2 shrink-0" />
-                          Settings
+                          Настройки
                         </button>
                       </div>
                     )}
@@ -200,7 +200,7 @@ function Projects({ workspaceId }: ProjectsProps) {
           : isSidebarOpened && (
               <div className="px-3 py-4 flex flex-col items-center text-center">
                 <p className="text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
-                  No projects yet
+                  Проектов нет
                 </p>
               </div>
             )}

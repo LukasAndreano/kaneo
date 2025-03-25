@@ -29,7 +29,6 @@ function CreateProjectModal({ open, onClose }: CreateProjectModalProps) {
     workspaceId: workspace?.id ?? "",
     icon: selectedIcon,
   });
-  const IconComponent = icons[selectedIcon as keyof typeof icons];
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -38,7 +37,7 @@ function CreateProjectModal({ open, onClose }: CreateProjectModalProps) {
 
     try {
       const { data } = await mutateAsync();
-      toast.success("Project created successfully");
+      toast.success("Проект успешно создан");
       await queryClient.invalidateQueries({ queryKey: ["projects"] });
 
       navigate({
@@ -52,7 +51,7 @@ function CreateProjectModal({ open, onClose }: CreateProjectModalProps) {
       resetAndCloseModal();
     } catch (error) {
       toast.error(
-        error instanceof Error ? error.message : "Failed to create project",
+        error instanceof Error ? error.message : "Не удалось создать проект",
       );
     }
   };
@@ -87,7 +86,7 @@ function CreateProjectModal({ open, onClose }: CreateProjectModalProps) {
           <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-xl">
             <div className="flex items-center justify-between p-4 border-b border-zinc-200 dark:border-zinc-800">
               <Dialog.Title className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                New Project
+                Новый проект
               </Dialog.Title>
               <Dialog.Close
                 asChild
@@ -101,15 +100,15 @@ function CreateProjectModal({ open, onClose }: CreateProjectModalProps) {
               <div className="mb-4">
                 <label
                   htmlFor="projectName"
-                  aria-label="Project name"
+                  aria-label="Имя проекта"
                   className="block text-sm font-medium text-zinc-900 dark:text-zinc-300 mb-1"
                 >
-                  Project Name
+                  Имя проекта
                 </label>
                 <Input
                   value={name}
                   onChange={handleNameChange}
-                  placeholder="Designers"
+                  placeholder="StealthSurf VPN"
                   className="bg-white dark:bg-zinc-800/50"
                   required
                 />
@@ -120,13 +119,13 @@ function CreateProjectModal({ open, onClose }: CreateProjectModalProps) {
                   htmlFor="slug"
                   className="block text-sm font-medium text-zinc-900 dark:text-zinc-300 mb-1"
                 >
-                  Project Slug
+                  Аббревиатура проекта
                 </label>
                 <div className="flex gap-3">
                   <Input
                     value={slug}
                     onChange={(e) => setSlug(e.target.value.toUpperCase())}
-                    placeholder="ABC"
+                    placeholder="SURF"
                     className="bg-white dark:bg-zinc-800/50 uppercase"
                     maxLength={5}
                     pattern="[A-Z0-9]+"
@@ -134,7 +133,8 @@ function CreateProjectModal({ open, onClose }: CreateProjectModalProps) {
                   />
                 </div>
                 <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-                  This key will be used for ticket IDs (e.g., ABC-123)
+                  Он будет использоваться для идентификаторов задач (например,
+                  SURF-123)
                 </p>
               </div>
 
@@ -143,10 +143,10 @@ function CreateProjectModal({ open, onClose }: CreateProjectModalProps) {
                   htmlFor="icon"
                   className="block text-sm font-medium text-zinc-900 dark:text-zinc-300 mb-3"
                 >
-                  Project Icon
+                  Иконка проекта
                 </label>
                 <div className="relative">
-                  <div className="grid grid-cols-8 gap-2 max-h-[240px] overflow-y-auto p-2 rounded-lg border border-zinc-200 dark:border-zinc-700/50">
+                  <div className="grid grid-cols-8 gap-2 max-h-[240px] overflow-y-auto p-2 rounded-lg border border-zinc-200 dark:border-zinc-700/50 mb-4">
                     {Object.entries(icons).map(([name, Icon]) => (
                       <button
                         key={name}
@@ -164,13 +164,6 @@ function CreateProjectModal({ open, onClose }: CreateProjectModalProps) {
                       </button>
                     ))}
                   </div>
-                  <div className="absolute left-0 right-0 bottom-0 h-8 bg-gradient-to-t from-white dark:from-zinc-900 to-transparent pointer-events-none" />
-                </div>
-                <div className="flex items-center gap-2 mt-2 px-2">
-                  <IconComponent className="w-4 h-4 text-zinc-400" />
-                  <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                    {selectedIcon}
-                  </span>
                 </div>
               </div>
 
@@ -180,14 +173,14 @@ function CreateProjectModal({ open, onClose }: CreateProjectModalProps) {
                     type="button"
                     className="bg-zinc-100 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
                   >
-                    Cancel
+                    Отменить
                   </Button>
                 </Dialog.Close>
                 <Button
                   type="submit"
                   className="bg-indigo-600 text-white hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400"
                 >
-                  Create Project
+                  Создать проект
                 </Button>
               </div>
             </form>

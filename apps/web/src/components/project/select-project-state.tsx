@@ -37,11 +37,11 @@ function SelectProjectState() {
             </motion.div>
           </div>
           <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
-            Select a Project
+            Выберите проект
           </h1>
           <p className="text-zinc-500 dark:text-zinc-400 text-center max-w-md">
-            Choose a project from the sidebar to view its kanban board and start
-            managing your tasks.
+            Выберите проект из бокового меню, чтобы просматривать его доску и
+            управлять своими задачами.
           </p>
         </div>
       </motion.div>

@@ -32,17 +32,17 @@ interface EditorProps {
 
 const TEXT_OPTIONS = [
   {
-    label: "Normal text",
+    label: "Обычный",
     value: "paragraph",
     icon: <Type className="w-4 h-4" />,
   },
   {
-    label: "Heading 1",
+    label: "Заголовок 1",
     value: "h1",
     icon: <span className="text-sm">H1</span>,
   },
   {
-    label: "Heading 2",
+    label: "Заголовок 2",
     value: "h2",
     icon: <span className="text-sm">H2</span>,
   },
@@ -51,7 +51,7 @@ const TEXT_OPTIONS = [
 export function Editor({
   value,
   onChange,
-  placeholder = "Write something...",
+  placeholder = "Напишите что-нибудь...",
 }: EditorProps) {
   const [isTextMenuOpen, setIsTextMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);

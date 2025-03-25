@@ -11,15 +11,15 @@ export const Route = createFileRoute("/auth/sign-up")({
 function SignUp() {
   return (
     <>
-      <PageTitle title="Create Account" />
+      <PageTitle title="Создание учетной записи" />
       <AuthLayout
-        title="Create account"
-        subtitle="Get started with your free workspace"
+        title="Создание учетной записи"
+        subtitle="Начните с бесплатной рабочей области"
       >
         <SignUpForm />
         <AuthToggle
-          message="Already have an account?"
-          linkText="Sign in"
+          message="Уже есть учетная запись?"
+          linkText="Войти"
           linkTo="/auth/sign-in"
         />
       </AuthLayout>

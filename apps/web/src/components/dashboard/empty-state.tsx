@@ -57,10 +57,10 @@ function EmptyDashboardState() {
               </div>
               <div className="flex-1">
                 <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  Create Your First Workspace
+                  Создайте свою первую рабочую область
                 </h3>
                 <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                  Start organizing your work in one place
+                  Начните организовывать свою работу в одном месте
                 </p>
               </div>
             </div>

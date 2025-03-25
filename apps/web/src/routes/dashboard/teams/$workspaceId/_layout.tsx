@@ -23,7 +23,7 @@ function RouteComponent() {
 
   return (
     <>
-      <PageTitle title="Team Members" />
+      <PageTitle title="Участники команды" />
       <div className="flex-1 flex flex-col md:flex-row h-screen">
         <motion.div
           className="md:hidden border-b border-zinc-200 dark:border-zinc-800 p-4"
@@ -38,7 +38,7 @@ function RouteComponent() {
             className="flex items-center gap-2 group"
           >
             <Menu className="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:rotate-90" />
-            <span>{isMobileNavOpen ? "Close Menu" : "Menu"}</span>
+            <span>{isMobileNavOpen ? "Закрыть меню" : "Меню"}</span>
           </Button>
         </motion.div>
 
@@ -75,7 +75,7 @@ function RouteComponent() {
                   transition={{ delay: 0.1 }}
                   className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-4"
                 >
-                  Team
+                  Участники команды
                 </motion.h2>
                 <nav className="space-y-1">
                   <motion.div
@@ -97,7 +97,7 @@ function RouteComponent() {
                       onClick={() => setIsMobileNavOpen(false)}
                     >
                       <Users className="w-4 h-4 mr-3" />
-                      Members
+                      Участники команды
                     </Link>
                   </motion.div>
 
@@ -114,9 +114,9 @@ function RouteComponent() {
                     >
                       <Shield className="w-4 h-4 mr-3" />
                       <span className="flex items-center gap-2">
-                        Roles
+                        Роли
                         <span className="text-[10px] font-medium px-1.5 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400">
-                          Soon
+                          Скоро
                         </span>
                       </span>
                     </div>

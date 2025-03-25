@@ -27,11 +27,11 @@ function UserInfo() {
       setUser(null);
       setProject(undefined);
       setWorkspace(undefined);
-      toast.success("Signed out successfully");
+      toast.success("Вы вышли из системы");
       navigate({ to: "/auth/sign-in" });
     } catch (error) {
       toast.error(
-        error instanceof Error ? error.message : "Failed to sign out",
+        error instanceof Error ? error.message : "Не удалось выйти из системы",
       );
     }
   };
@@ -59,10 +59,10 @@ function UserInfo() {
             <AvatarFallback>{user?.name?.charAt(0)}</AvatarFallback>
           </Avatar>
           <div className={cn("flex-1 min-w-0", !isSidebarOpened && "hidden")}>
-            <p className="text-sm font-medium text-zinc-900 dark:text-zinc-100 truncate">
+            <p className="text-sm text-left font-medium text-zinc-900 dark:text-zinc-100 truncate">
               {user?.name}
             </p>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400 truncate">
+            <p className="text-xs text-left text-zinc-500 dark:text-zinc-400 truncate">
               {user?.email}
             </p>
           </div>
@@ -80,7 +80,7 @@ function UserInfo() {
             onClick={handleClickSettings}
           >
             <Settings className="w-4 h-4 mr-2" />
-            Settings
+            Настройки
           </DropdownMenu.Item>
 
           <DropdownMenu.Separator className="h-px bg-zinc-200 dark:bg-zinc-700 my-1" />
@@ -91,7 +91,7 @@ function UserInfo() {
             disabled={isPending}
           >
             <LogOut className="w-4 h-4 mr-2" />
-            {isPending ? "Signing out..." : "Sign out"}
+            {isPending ? "Выходим..." : "Выход"}
           </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu.Portal>

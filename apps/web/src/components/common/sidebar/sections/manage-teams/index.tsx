@@ -30,7 +30,7 @@ function ManageTeams() {
           isSidebarOpened && "px-3",
         )}
       >
-        {isSidebarOpened && "Team"}
+        {isSidebarOpened && "Команда"}
       </h2>
       <button
         type="button"
@@ -42,7 +42,7 @@ function ManageTeams() {
           isOnTeamsRoute &&
             "bg-indigo-51 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-400",
         )}
-        title={!isSidebarOpened ? "Manage Team" : undefined}
+        title={!isSidebarOpened ? "Управление командой" : undefined}
         onClick={() => onManageTeams()}
       >
         <Users
@@ -51,7 +51,7 @@ function ManageTeams() {
             !isSidebarOpened ? "w-6 h-6" : "w-4 h-4 mr-2",
           )}
         />
-        {isSidebarOpened && "Manage Team"}
+        {isSidebarOpened && "Управление командой"}
       </button>
     </div>
   );

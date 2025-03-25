@@ -3,10 +3,10 @@ import db from "../../database";
 import { projectTable, taskTable, userTable } from "../../database/schema";
 
 const DEFAULT_COLUMNS = [
-  { id: "to-do", name: "To Do" },
-  { id: "in-progress", name: "In Progress" },
-  { id: "in-review", name: "In Review" },
-  { id: "done", name: "Done" },
+  { id: "to-do", name: "Задачи" },
+  { id: "in-progress", name: "В процессе" },
+  { id: "in-review", name: "На проверке" },
+  { id: "done", name: "Выполнено" },
 ] as const;
 
 async function getTasks(projectId: string) {
@@ -15,7 +15,7 @@ async function getTasks(projectId: string) {
   });
 
   if (!project) {
-    throw new Error("Project not found");
+    throw new Error("Проект не найден");
   }
 
   const tasks = await db

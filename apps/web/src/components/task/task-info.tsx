@@ -139,22 +139,22 @@ function TaskInfo({
                 options={[
                   {
                     value: "low",
-                    label: "Low",
+                    label: "Низкий",
                     icon: <Flag className="w-4 h-4 text-blue-500" />,
                   },
                   {
                     value: "medium",
-                    label: "Medium",
+                    label: "Средний",
                     icon: <Flag className="w-4 h-4 text-yellow-500" />,
                   },
                   {
                     value: "high",
-                    label: "High",
+                    label: "Высокий",
                     icon: <Flag className="w-4 h-4 text-red-500" />,
                   },
                   {
                     value: "urgent",
-                    label: "Urgent",
+                    label: "Срочный",
                     icon: <Flag className="w-4 h-4 text-red-500" />,
                   },
                 ]}

@@ -30,7 +30,7 @@ interface CreateTaskModalProps {
 }
 
 const taskSchema = z.object({
-  title: z.string().min(1, { message: "Title is required" }),
+  title: z.string().min(1, { message: "Требуется ввести заголовок" }),
   description: z.string().optional(),
   priority: z.enum(["low", "medium", "high", "urgent"]),
   email: z.string(),
@@ -90,12 +90,12 @@ function CreateTaskModal({ open, onClose, status }: CreateTaskModalProps) {
 
       setProject(updatedProject);
       updateTask({ ...newTask, position: 0 });
-      toast.success("Task created successfully");
+      toast.success("Задача успешно создана");
 
       handleClose();
     } catch (error) {
       toast.error(
-        error instanceof Error ? error.message : "Failed to create task",
+        error instanceof Error ? error.message : "Не удалось создать задачу",
       );
     }
   };
@@ -108,7 +108,7 @@ function CreateTaskModal({ open, onClose, status }: CreateTaskModalProps) {
           <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-xl">
             <div className="flex items-center justify-between p-4 border-b border-zinc-200 dark:border-zinc-800">
               <Dialog.Title className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                New Task
+                Новая задача
               </Dialog.Title>
               <Dialog.Close className="text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-300">
                 <X size={20} />
@@ -124,12 +124,12 @@ function CreateTaskModal({ open, onClose, status }: CreateTaskModalProps) {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="block text-sm font-medium text-zinc-900 dark:text-zinc-300 mb-1">
-                          Title
+                          Заголовок
                         </FormLabel>
                         <FormControl>
                           <Input
                             {...field}
-                            placeholder="Task title"
+                            placeholder="Исправить баг в админке"
                             className="bg-white dark:bg-zinc-800/50"
                           />
                         </FormControl>
@@ -144,14 +144,14 @@ function CreateTaskModal({ open, onClose, status }: CreateTaskModalProps) {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="block text-sm font-medium text-zinc-900 dark:text-zinc-300 mb-1">
-                          Description
+                          Описание
                         </FormLabel>
                         <FormControl>
                           <div className="border border-zinc-200 dark:border-zinc-700/50 rounded-md overflow-hidden">
                             <Editor
                               value={field.value || ""}
                               onChange={(value) => field.onChange(value)}
-                              placeholder="Add a detailed description..."
+                              placeholder="Добавьте подробное описание..."
                             />
                           </div>
                         </FormControl>
@@ -166,7 +166,7 @@ function CreateTaskModal({ open, onClose, status }: CreateTaskModalProps) {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="block text-sm font-medium text-zinc-900 dark:text-zinc-300 mb-1">
-                          Asignees
+                          Исполнитель
                         </FormLabel>
                         <FormControl>
                           <Select
@@ -174,7 +174,7 @@ function CreateTaskModal({ open, onClose, status }: CreateTaskModalProps) {
                             options={[
                               {
                                 value: "",
-                                label: "Unassigned",
+                                label: "Не назначен",
                                 icon: (
                                   <UserIcon className="w-4 h-4 text-zinc-400" />
                                 ),
@@ -184,7 +184,7 @@ function CreateTaskModal({ open, onClose, status }: CreateTaskModalProps) {
                                 label: user.user?.name ?? "",
                               })),
                             ]}
-                            placeholder="Select assignee"
+                            placeholder="Выберите исполнителя"
                           />
                         </FormControl>
                         <FormMessage />
@@ -198,7 +198,7 @@ function CreateTaskModal({ open, onClose, status }: CreateTaskModalProps) {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="block text-sm font-medium text-zinc-900 dark:text-zinc-300 mb-1">
-                          Priority
+                          Приоритет
                         </FormLabel>
                         <FormControl>
                           <Select
@@ -206,28 +206,28 @@ function CreateTaskModal({ open, onClose, status }: CreateTaskModalProps) {
                             options={[
                               {
                                 value: "low",
-                                label: "Low",
+                                label: "Низкий",
                                 icon: (
                                   <Flag className="w-4 h-4 text-blue-500" />
                                 ),
                               },
                               {
                                 value: "medium",
-                                label: "Medium",
+                                label: "Средний",
                                 icon: (
                                   <Flag className="w-4 h-4 text-yellow-500" />
                                 ),
                               },
                               {
                                 value: "high",
-                                label: "High",
+                                label: "Высокий",
                                 icon: (
                                   <Flag className="w-4 h-4 text-orange-500" />
                                 ),
                               },
                               {
                                 value: "urgent",
-                                label: "Urgent",
+                                label: "Срочный",
                                 icon: <Flag className="w-4 h-4 text-red-500" />,
                               },
                             ]}
@@ -246,14 +246,14 @@ function CreateTaskModal({ open, onClose, status }: CreateTaskModalProps) {
                       type="button"
                       className="bg-zinc-100 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
                     >
-                      Cancel
+                      Отменить
                     </Button>
                   </Dialog.Close>
                   <Button
                     type="submit"
                     className="bg-indigo-600 text-white hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400"
                   >
-                    Create Task
+                    Создать задачу
                   </Button>
                 </div>
               </form>

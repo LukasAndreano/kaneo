@@ -8,7 +8,7 @@ interface PageTitleProps {
 
 export default function PageTitle({
   title,
-  suffix = "Kaneo",
+  suffix = "ShopCore Tasks",
   hideAppName = false,
 }: PageTitleProps) {
   useEffect(() => {

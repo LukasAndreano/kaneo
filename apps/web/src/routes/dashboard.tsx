@@ -36,7 +36,7 @@ function DashboardIndexRouteComponent() {
 
   return (
     <>
-      <PageTitle title="Dashboard" hideAppName={!workspace?.name} />
+      <PageTitle title="Главная" hideAppName={!workspace?.name} />
       <Sidebar />
       <main className="w-full overflow-auto scroll-smooth flex flex-col">
         {isDemoMode && <DemoAlert />}

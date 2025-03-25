@@ -37,11 +37,11 @@ function SelectWorkspaceState() {
             </motion.div>
           </div>
           <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
-            Select a Workspace
+            Выберите рабочую область
           </h1>
           <p className="text-zinc-500 dark:text-zinc-400 text-center max-w-md">
-            Choose a workspace from the dropdown in the sidebar to start
-            managing your projects.
+            Выберите рабочую область из выпадающего списка в боковом меню, чтобы
+            управлять своими проектами.
           </p>
         </div>
       </motion.div>

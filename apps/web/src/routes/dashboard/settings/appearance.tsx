@@ -26,41 +26,41 @@ function AppearanceSettings() {
         >
           <div>
             <h1 className="text-xl md:text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
-              Appearance
+              Внешний вид
             </h1>
             <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-              Customize how Kaneo looks on your device.
+              Выберите, как ShopCore Tasks должен выглядеть на вашем устройстве.
             </p>
           </div>
 
           <div className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800">
             <div className="p-4 md:p-6">
               <h2 className="text-sm font-medium text-zinc-900 dark:text-zinc-100 mb-1">
-                Theme
+                Тема
               </h2>
               <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4 md:mb-6">
-                Select your preferred theme for Kaneo's interface.
+                Выберите вашу любимую тему для интерфейса ShopCore Tasks.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
                 {[
                   {
                     id: "light",
-                    name: "Light",
+                    name: "Светлая",
                     icon: Sun,
-                    description: "Light mode for bright environments",
+                    description: "Светлая тема для светлых окружений",
                   },
                   {
                     id: "dark",
-                    name: "Dark",
+                    name: "Темная",
                     icon: Moon,
-                    description: "Dark mode for low-light environments",
+                    description: "Темная тема для темных окружений",
                   },
                   {
                     id: "system",
-                    name: "System",
+                    name: "Системная",
                     icon: Monitor,
-                    description: "Follows your system preferences",
+                    description: "Следует вашим системным предпочтениям",
                   },
                 ].map((theme) => (
                   <button
@@ -110,10 +110,10 @@ function AppearanceSettings() {
           <div className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800">
             <div className="p-4 md:p-6">
               <h2 className="text-sm font-medium text-zinc-900 dark:text-zinc-100 mb-1">
-                Interface Preferences
+                Настройки интерфейса
               </h2>
               <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4 md:mb-6">
-                Customize your interface preferences.
+                Выберите, каким вы хотите видеть интерфейс.
               </p>
 
               <div className="space-y-4">
@@ -123,10 +123,10 @@ function AppearanceSettings() {
                       htmlFor="sidebar-navigation"
                       className="text-sm font-medium text-zinc-900 dark:text-zinc-100"
                     >
-                      Sidebar navigation
+                      Навигация в боковом меню
                     </label>
                     <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                      Show or hide the sidebar
+                      Показать или скрыть боковое меню
                     </p>
                   </div>
                   <div className="flex items-center">

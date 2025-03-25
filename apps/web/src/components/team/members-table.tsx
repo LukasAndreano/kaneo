@@ -12,16 +12,16 @@ function MembersTable({ users }: MembersTableProps) {
       <thead>
         <tr className="border-b border-zinc-200 dark:border-zinc-800">
           <th className="text-left py-3 px-4 text-sm font-medium text-zinc-500 dark:text-zinc-400">
-            Email
+            Электронная почта
           </th>
           <th className="text-left py-3 px-4 text-sm font-medium text-zinc-500 dark:text-zinc-400">
-            Role
+            Роль
           </th>
           <th className="text-left py-3 px-4 text-sm font-medium text-zinc-500 dark:text-zinc-400">
-            Status
+            Статус
           </th>
           <th className="text-left py-3 px-4 text-sm font-medium text-zinc-500 dark:text-zinc-400">
-            Date
+            Дата присоединения
           </th>
           <th className="w-px" />
         </tr>
@@ -46,8 +46,7 @@ function MembersTable({ users }: MembersTableProps) {
             </td>
             <td className="py-3 px-4">
               <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-400">
-                {member.role.charAt(0).toUpperCase() +
-                  member.role.slice(1).toLowerCase()}
+                {member.role === "owner" ? "Владелец" : "Участник"}
               </span>
             </td>
             <td className="py-3 px-4">
@@ -60,7 +59,7 @@ function MembersTable({ users }: MembersTableProps) {
             </td>
             <td className="py-3 px-4 text-sm text-zinc-500 dark:text-zinc-400">
               {member.joinedAt &&
-                new Date(member.joinedAt).toLocaleDateString("en-US", {
+                new Date(member.joinedAt).toLocaleDateString("ru-RU", {
                   month: "short",
                   day: "numeric",
                   year: "numeric",

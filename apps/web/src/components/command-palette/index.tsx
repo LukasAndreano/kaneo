@@ -138,10 +138,10 @@ export function CommandPalette() {
                       )}
                     >
                       <Plus className="w-4 h-4" />
-                      Create new task
+                      Новая задача
                       {!project && (
                         <span className="ml-auto text-xs text-zinc-500 dark:text-zinc-400">
-                          Select a project first
+                          Выберите проект
                         </span>
                       )}
                     </Command.Item>
@@ -163,10 +163,10 @@ export function CommandPalette() {
                       )}
                     >
                       <Plus className="w-4 h-4" />
-                      Create new project
+                      Новый проект
                       {!workspace && (
                         <span className="ml-auto text-xs text-zinc-500 dark:text-zinc-400">
-                          Select a workspace first
+                          Выберите рабочую область
                         </span>
                       )}
                     </Command.Item>
@@ -191,7 +191,7 @@ export function CommandPalette() {
                         )}
                       >
                         <LayoutGrid className="w-4 h-4" />
-                        Go to board
+                        Перейти к задачам
                       </Command.Item>
                     )}
 
@@ -215,7 +215,7 @@ export function CommandPalette() {
                         )}
                       >
                         <Settings className="w-4 h-4" />
-                        Project settings
+                        Настройки проекта
                       </Command.Item>
                     )}
                   </CommandGroup>
@@ -234,7 +234,7 @@ export function CommandPalette() {
                       )}
                     >
                       <Plus className="w-4 h-4" />
-                      Create new workspace
+                      Новая рабочая область
                     </Command.Item>
                   </CommandGroup>
                 </Command.List>

@@ -18,7 +18,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useQueryClient } from "@tanstack/react-query";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { AlertTriangle } from "lucide-react";
-import { createElement, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -73,10 +73,10 @@ function ProjectSettings() {
         queryKey: ["projects", project?.workspaceId],
       });
 
-      toast.success("Project updated successfully");
+      toast.success("Проект успешно обновлен");
     } catch (error) {
       toast.error(
-        error instanceof Error ? error.message : "Failed to update project",
+        error instanceof Error ? error.message : "Не удалось обновить проект",
       );
     }
   };
@@ -85,7 +85,7 @@ function ProjectSettings() {
     if (!project) return;
 
     if (confirmProjectName !== project.name) {
-      toast.error("Project name does not match");
+      toast.error("Имя проекта не совпадает");
       return;
     }
 
@@ -107,23 +107,23 @@ function ProjectSettings() {
         },
       });
 
-      toast.success("Project deleted successfully");
+      toast.success("Проект успешно удален");
       setConfirmProjectName("");
     } catch (error) {
       toast.error(
-        error instanceof Error ? error.message : "Failed to delete project",
+        error instanceof Error ? error.message : "Не удалось удалить проект",
       );
     }
   };
 
   return (
     <>
-      <PageTitle title="Project Settings" />
+      <PageTitle title="Настройки проекта" />
       <div className="h-full flex flex-col bg-white dark:bg-zinc-900 overflow-hidden">
         <header className="sticky top-0 z-10 flex items-center px-4 h-[65px] bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
           <div className="flex items-center gap-2 flex-1 min-w-0">
             <h1 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-              Project Settings
+              Настройки проекта
             </h1>
           </div>
         </header>
@@ -133,10 +133,10 @@ function ProjectSettings() {
             <div className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800">
               <div className="p-4 md:p-6">
                 <h2 className="text-sm font-medium text-zinc-900 dark:text-zinc-100 mb-1">
-                  General Settings
+                  Основные настройки
                 </h2>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
-                  Basic project information and settings.
+                  Основная информация и настройки проекта.
                 </p>
 
                 {project ? (
@@ -151,7 +151,7 @@ function ProjectSettings() {
                           name="name"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel>Project Name</FormLabel>
+                              <FormLabel>Имя проекта</FormLabel>
                               <FormControl>
                                 <Input
                                   {...field}
@@ -168,7 +168,7 @@ function ProjectSettings() {
                           name="slug"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel>Project Slug</FormLabel>
+                              <FormLabel>Аббревиатура проекта</FormLabel>
                               <FormControl>
                                 <Input
                                   {...field}
@@ -186,7 +186,7 @@ function ProjectSettings() {
                         name="icon"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Project Icon</FormLabel>
+                            <FormLabel>Иконка проекта</FormLabel>
                             <FormControl>
                               <div className="relative">
                                 <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2 max-h-[240px] overflow-y-auto p-2 rounded-lg border border-zinc-200 dark:border-zinc-700/50">
@@ -207,33 +207,21 @@ function ProjectSettings() {
                                     </button>
                                   ))}
                                 </div>
-                                <div className="absolute left-0 right-0 bottom-0 h-8 bg-gradient-to-t from-white dark:from-zinc-900 to-transparent pointer-events-none" />
                               </div>
                             </FormControl>
-                            <div className="flex items-center gap-2 mt-2 px-2">
-                              {createElement(
-                                icons[field.value as keyof typeof icons],
-                                {
-                                  className: "w-4 h-4 text-zinc-400",
-                                },
-                              )}
-                              <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                                {field.value}
-                              </span>
-                            </div>
                             <FormMessage />
                           </FormItem>
                         )}
                       />
 
                       <Button type="submit" disabled={isPending}>
-                        {isPending ? "Saving..." : "Save Changes"}
+                        {isPending ? "Сохраняем..." : "Сохранить изменения"}
                       </Button>
                     </form>
                   </Form>
                 ) : (
                   <div className="text-sm text-zinc-500 dark:text-zinc-400">
-                    Select a project to view its settings
+                    Выберите проект для просмотра его настроек
                   </div>
                 )}
               </div>
@@ -243,11 +231,10 @@ function ProjectSettings() {
               <div className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800">
                 <div className="p-4 md:p-6">
                   <h2 className="text-base font-medium text-red-600 dark:text-red-400 mb-1">
-                    Danger Zone
+                    Опасная зона
                   </h2>
                   <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-6">
-                    Permanently delete your project. This action cannot be
-                    undone.
+                    Здесь можно удалить проект. Это действие нельзя отменить.
                   </p>
 
                   <div className="space-y-4">
@@ -255,13 +242,13 @@ function ProjectSettings() {
                       <div className="flex items-center gap-3 text-red-600 dark:text-red-400 mb-3">
                         <AlertTriangle className="w-5 h-5" />
                         <p className="font-medium">
-                          Warning: This action cannot be undone
+                          Внимание: это действие нельзя отменить
                         </p>
                       </div>
                       <ul className="list-disc list-inside space-y-1 text-sm text-red-600/90 dark:text-red-400/90">
-                        <li>All tasks will be permanently deleted</li>
-                        <li>All task history will be removed</li>
-                        <li>Project settings will be erased</li>
+                        <li>Все задачи будут удалены</li>
+                        <li>Вся история задач будет удалена</li>
+                        <li>Настройки проекта будут удалены</li>
                       </ul>
                     </div>
 
@@ -270,7 +257,7 @@ function ProjectSettings() {
                         htmlFor="confirm-project-name"
                         className="block text-sm font-medium text-zinc-900 dark:text-zinc-100 mb-1.5"
                       >
-                        Type "{project.name}" to confirm deletion
+                        Введите "{project.name}" для подтверждения удаления
                       </label>
                       <div className="flex gap-3">
                         <Input
@@ -286,7 +273,7 @@ function ProjectSettings() {
                           disabled={confirmProjectName !== project.name}
                           className="bg-red-600 text-white hover:bg-red-500 dark:bg-red-500 dark:hover:bg-red-400 disabled:opacity-50"
                         >
-                          {isDeleting ? "Deleting..." : "Delete Project"}
+                          {isDeleting ? "Удаляем..." : "Удалить проект"}
                         </Button>
                       </div>
                     </div>

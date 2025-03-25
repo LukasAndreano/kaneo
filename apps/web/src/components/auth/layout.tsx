@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Logo } from "../common/logo";
 
 interface AuthLayoutProps {
   children: React.ReactNode;
@@ -16,7 +15,6 @@ export function AuthLayout({ children, title, subtitle }: AuthLayoutProps) {
         className="w-full max-w-md"
       >
         <div className="mb-8 text-center">
-          <Logo className="mx-auto mb-6" />
           <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
             {title}
           </h1>

@@ -48,13 +48,15 @@ function InviteTeamMemberModal({ open, onClose }: Props) {
         queryKey: ["workspace-users", workspaceId],
       });
 
-      toast.success("Invitation sent successfully");
+      toast.success("Приглашение успешно отправлено");
 
       resetInviteTeamMember();
       onClose();
     } catch (error) {
       toast.error(
-        error instanceof Error ? error.message : "Failed to invite team member",
+        error instanceof Error
+          ? error.message
+          : "Не удалось отправить приглашение",
       );
     }
   };
@@ -79,7 +81,7 @@ function InviteTeamMemberModal({ open, onClose }: Props) {
           <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-xl">
             <div className="flex items-center justify-between p-4 border-b border-zinc-200 dark:border-zinc-800">
               <Dialog.Title className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                Invite Team Member
+                Новое приглашение
               </Dialog.Title>
               <Dialog.Close
                 asChild
@@ -99,12 +101,12 @@ function InviteTeamMemberModal({ open, onClose }: Props) {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel className="block text-sm font-medium text-zinc-900 dark:text-zinc-300 mb-1">
-                            Email
+                            Электронная почта
                           </FormLabel>
                           <FormControl>
                             <Input
                               {...field}
-                              placeholder="colleague@company.com"
+                              placeholder="roman@shopcore.ru"
                               className="bg-white dark:bg-zinc-800/50"
                               autoFocus
                             />
@@ -122,14 +124,14 @@ function InviteTeamMemberModal({ open, onClose }: Props) {
                       type="button"
                       className="bg-zinc-100 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
                     >
-                      Cancel
+                      Отменить
                     </Button>
                   </Dialog.Close>
                   <Button
                     type="submit"
                     className="bg-indigo-600 text-white hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400"
                   >
-                    Send Invitation
+                    Отправить приглашение
                   </Button>
                 </div>
               </form>
